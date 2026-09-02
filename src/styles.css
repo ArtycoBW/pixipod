@@ -2383,6 +2383,24 @@ ul {
     width: 16rem;
   }
 
+  .hero-capabilities > p {
+    align-items: center;
+  }
+
+  .hero-capabilities > p b {
+    text-align: right;
+  }
+
+  .hero-capabilities ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.42rem;
+  }
+
+  .hero-capabilities li {
+    justify-content: center;
+    padding-inline: 0.5rem;
+  }
+
   .hero-card-main {
     grid-template-columns: 4.6rem 1fr;
     min-height: 7.6rem;
