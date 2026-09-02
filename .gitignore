@@ -10,4 +10,5 @@ video-previews/.thumbnails/
 hf-blank/
 preview-*.png
 .DS_Store
+.env
 deploy/.env
