@@ -1,0 +1,34 @@
+<template id="trimmy-template">
+  <div data-hf-id="hf-wqy2" id="root" data-composition-id="trimmy" data-start="0" data-duration="6.5" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-k41r" class="scene scene-one"><div data-hf-id="hf-d9wv" class="frame"><img data-hf-id="hf-yiq5" src="capture/trimmy/screenshots/scroll-000.png" alt=""></div></div>
+    <div data-hf-id="hf-mx25" class="scene scene-two"><div data-hf-id="hf-w9zj" class="frame"><div data-hf-id="hf-avsl" class="capture-copy" aria-hidden="true"></div></div></div>
+    <div data-hf-id="hf-ivmq" class="scan" data-layout-ignore=""></div>
+    <div data-hf-id="hf-e08n" class="seam" data-layout-ignore=""></div>
+    <style>
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background-color: #203232; }
+      #root .scene, #root .frame, #root img { position: absolute; inset: 0; width: 100%; height: 100%; }
+      #root .scene { overflow: hidden; }
+      #root .scene-one { z-index: 1; background-color: #203232; }
+      #root .scene-two { z-index: 2; opacity: 0; background-color: #203232; }
+      #root img { object-fit: cover; }
+      #root .capture-copy { position: absolute; inset: 0; background-image: url("capture/trimmy/screenshots/scroll-000.png"); background-size: cover; background-position: 58% 50%; }
+      #root .scan { position: absolute; z-index: 5; top: 0; left: 0; width: 6px; height: 1080px; opacity: 0; background-color: #05C8ED; box-shadow: 0 0 28px #7137FF; }
+      #root .seam { position: absolute; z-index: 8; inset: 0; opacity: 0; background-color: #203232; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo('#root .scene-one', { opacity: 0, filter: 'blur(9px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.82, ease: 'expo.out' }, 0.14);
+      tl.fromTo('#root .scene-one .frame', { scale: 1, x: 0 }, { scale: 1.07, x: -22, duration: 3.2, ease: 'sine.inOut' }, 0.14);
+      tl.fromTo('#root .scan', { opacity: 0, x: 0 }, { opacity: 1, x: 1914, duration: 0.58, ease: 'power2.inOut' }, 2.68);
+      tl.set('#root .scene-two', { opacity: 1 }, 2.72);
+      tl.fromTo('#root .scene-two', { clipPath: 'inset(0 100% 0 0 round 0px)' }, { clipPath: 'inset(0 0% 0 0 round 0px)', duration: 0.58, ease: 'power2.inOut' }, 2.72);
+      tl.fromTo('#root .scene-two .frame', { scale: 1.12, x: 22 }, { scale: 1.16, x: 10, duration: 3.1, ease: 'power1.inOut' }, 2.72);
+      tl.to('#root .scan', { opacity: 0, duration: 0.18, ease: 'power1.in' }, 3.28);
+      tl.fromTo('#root .seam', { opacity: 0, clipPath: 'circle(0% at 50% 50%)' }, { opacity: 1, clipPath: 'circle(80% at 50% 50%)', duration: 0.52, ease: 'power2.in' }, 5.93);
+      window.__timelines.trimmy = tl;
+    </script>
+  </div>
+</template>
+

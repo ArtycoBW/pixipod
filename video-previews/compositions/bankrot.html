@@ -1,0 +1,37 @@
+<template id="bankrot-template">
+  <div data-hf-id="hf-z51n" id="root" data-composition-id="bankrot" data-start="0" data-duration="6.5" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-k41r" class="scene scene-one"><div data-hf-id="hf-d9wv" class="frame"><img data-hf-id="hf-xrre" src="capture/bankrot/screenshots/scroll-000.png" alt=""></div></div>
+    <div data-hf-id="hf-mx25" class="scene scene-two"><div data-hf-id="hf-w9zj" class="frame"><img data-hf-id="hf-n4yl" src="capture/bankrot/screenshots/scroll-018.png" alt=""></div></div>
+    <div data-hf-id="hf-3ecl" class="lens" data-layout-ignore=""></div>
+    <div data-hf-id="hf-eq6a" class="trace" data-layout-ignore=""></div>
+    <div data-hf-id="hf-e08n" class="seam" data-layout-ignore=""></div>
+    <style>
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background-color: #080C16; }
+      #root .scene, #root .frame, #root img { position: absolute; inset: 0; width: 100%; height: 100%; }
+      #root .scene { overflow: hidden; }
+      #root .scene-one { z-index: 1; background-color: #080C16; }
+      #root .scene-two { z-index: 2; opacity: 0; background-color: #080C16; }
+      #root img { object-fit: cover; }
+      #root .lens { position: absolute; z-index: 4; left: 540px; top: 190px; width: 840px; height: 840px; opacity: 0; border-radius: 50%; background: radial-gradient(circle, rgba(5,200,237,.24), rgba(113,55,255,0)); }
+      #root .trace { position: absolute; z-index: 5; inset: 42px; opacity: 0; border: 3px solid #05C8ED; border-radius: 42px; box-shadow: inset 0 0 30px rgba(113,55,255,.55), 0 0 24px rgba(5,200,237,.4); }
+      #root .seam { position: absolute; z-index: 8; inset: 0; opacity: 0; background-color: #080C16; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo('#root .scene-one', { opacity: 0, filter: 'blur(10px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.9, ease: 'power1.out' }, 0.18);
+      tl.fromTo('#root .scene-one .frame', { scale: 1.04 }, { scale: 1, duration: 3.0, ease: 'sine.inOut' }, 0.18);
+      tl.fromTo('#root .lens', { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1.25, duration: 0.86, ease: 'expo.out' }, 2.52);
+      tl.fromTo('#root .trace', { opacity: 0, scale: 0.98 }, { opacity: 0.85, scale: 1, duration: 0.48, ease: 'power3.out' }, 2.62);
+      tl.set('#root .scene-two', { opacity: 1 }, 2.7);
+      tl.fromTo('#root .scene-two', { clipPath: 'circle(0% at 51% 45%)', filter: 'blur(12px)' }, { clipPath: 'circle(80% at 51% 45%)', filter: 'blur(0px)', duration: 0.72, ease: 'sine.inOut' }, 2.7);
+      tl.fromTo('#root .scene-two .frame', { scale: 0.965, x: 0 }, { scale: 1.015, x: -10, duration: 3.0, ease: 'power1.inOut' }, 2.7);
+      tl.to('#root .lens', { opacity: 0, duration: 0.4, ease: 'power1.in' }, 3.5);
+      tl.to('#root .trace', { opacity: 0, duration: 0.35, ease: 'power2.in' }, 3.5);
+      tl.fromTo('#root .seam', { opacity: 0, filter: 'blur(0px)' }, { opacity: 1, filter: 'blur(18px)', duration: 0.46, ease: 'power1.in' }, 5.98);
+      window.__timelines.bankrot = tl;
+    </script>
+  </div>
+</template>
+

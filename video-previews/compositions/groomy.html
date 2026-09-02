@@ -1,0 +1,33 @@
+<template id="groomy-template">
+  <div data-hf-id="hf-tgzf" id="root" data-composition-id="groomy" data-start="0" data-duration="6.5" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-k41r" class="scene scene-one"><div data-hf-id="hf-d9wv" class="frame"><img data-hf-id="hf-ey6y" src="capture/groomy/screenshots/scroll-000.png" alt=""></div></div>
+    <div data-hf-id="hf-mx25" class="scene scene-two"><div data-hf-id="hf-w9zj" class="frame"><img data-hf-id="hf-ijuw" src="capture/groomy/screenshots/scroll-020.png" alt=""></div></div>
+    <div data-hf-id="hf-y8q5" class="signal" data-layout-ignore=""></div>
+    <div data-hf-id="hf-e08n" class="seam" data-layout-ignore=""></div>
+    <style>
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background-color: #E1C19E; }
+      #root .scene, #root .frame, #root img { position: absolute; inset: 0; width: 100%; height: 100%; }
+      #root .scene { overflow: hidden; }
+      #root .scene-one { z-index: 1; background-color: #E1C19E; }
+      #root .scene-two { z-index: 2; opacity: 0; background-color: #E1C19E; }
+      #root img { object-fit: cover; }
+      #root .signal { position: absolute; z-index: 5; top: 576px; left: 0; width: 1920px; height: 4px; background-color: #E4FF60; transform-origin: left center; opacity: 0; box-shadow: 0 0 24px #05C8ED; }
+      #root .seam { position: absolute; z-index: 8; inset: 0; opacity: 0; background-color: #08090B; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      tl.fromTo('#root .scene-one', { opacity: 0, filter: 'blur(7px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.78, ease: 'power2.out' }, 0.15);
+      tl.fromTo('#root .scene-one .frame', { scale: 1, x: 0 }, { scale: 1.035, x: -24, duration: 3.05, ease: 'sine.inOut' }, 0.15);
+      tl.fromTo('#root .signal', { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.52, ease: 'expo.out' }, 2.64);
+      tl.set('#root .scene-two', { opacity: 1 }, 2.82);
+      tl.fromTo('#root .scene-two', { clipPath: 'circle(0% at 66% 54%)' }, { clipPath: 'circle(80% at 66% 54%)', duration: 0.62, ease: 'power3.out' }, 2.82);
+      tl.fromTo('#root .scene-two .frame', { scale: 0.99, rotationY: 1.5 }, { scale: 1.025, rotationY: 0, duration: 3.0, ease: 'power1.inOut' }, 2.82);
+      tl.to('#root .signal', { opacity: 0, duration: 0.24, ease: 'power1.in' }, 3.28);
+      tl.fromTo('#root .seam', { opacity: 0 }, { opacity: 1, duration: 0.45, ease: 'power2.in' }, 6.0);
+      window.__timelines.groomy = tl;
+    </script>
+  </div>
+</template>
+
