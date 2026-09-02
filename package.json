@@ -1,0 +1,31 @@
+{
+  "name": "pixipod-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/patch-rollup-wasm.cjs",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "server:dev": "npm --prefix server run start:dev",
+    "server:build": "npm --prefix server run build"
+  },
+  "dependencies": {
+    "@fontsource-variable/onest": "^5.2.6",
+    "@iconify/react": "^6.0.2",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.11",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@rollup/wasm-node": "^4.63.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.1.2"
+  },
+  "overrides": {
+    "rollup": "npm:@rollup/wasm-node@4.63.1"
+  }
+}

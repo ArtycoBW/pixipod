@@ -1,0 +1,12 @@
+node_modules/
+dist/
+server/.env
+server/node_modules/
+server/dist/
+video-previews/renders/
+video-previews/snapshots/
+video-previews/capture/
+video-previews/.thumbnails/
+hf-blank/
+preview-*.png
+.DS_Store
