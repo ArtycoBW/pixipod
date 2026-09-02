@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { LeadsController } from './leads/leads.controller';
-import { TelegramService } from './telegram/telegram.service';
+import { MailService } from './mail/mail.service';
 
 @Module({
   imports: [ConfigModule.forRoot({ isGlobal: true })],
   controllers: [LeadsController],
-  providers: [TelegramService],
+  providers: [MailService],
 })
 export class AppModule {}

@@ -1,12 +1,12 @@
 import { Body, Controller, Headers, HttpException, HttpStatus, Ip, Post } from '@nestjs/common';
-import { TelegramService } from '../telegram/telegram.service';
+import { MailService } from '../mail/mail.service';
 import { CreateLeadDto } from './create-lead.dto';
 
 @Controller('api/leads')
 export class LeadsController {
   private readonly attempts = new Map<string, number[]>();
 
-  constructor(private readonly telegram: TelegramService) {}
+  constructor(private readonly mail: MailService) {}
 
   @Post()
   async create(
@@ -16,7 +16,7 @@ export class LeadsController {
   ) {
     if (lead.website) return { ok: true };
     this.assertRateLimit(ip);
-    await this.telegram.sendLead(lead, { ip, userAgent });
+    await this.mail.sendLead(lead, { ip, userAgent });
     return { ok: true };
   }
 

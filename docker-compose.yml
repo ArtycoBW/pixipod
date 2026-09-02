@@ -10,8 +10,13 @@ services:
     environment:
       PORT: 3001
       FRONTEND_ORIGIN: https://pixipod.ru
-      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
-      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_SECURE: ${MAIL_SECURE}
+      MAIL_USER: ${MAIL_USER}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      MAIL_FROM: ${MAIL_FROM}
+      LEADS_TO_EMAIL: ${LEADS_TO_EMAIL}
 
   caddy:
     build:

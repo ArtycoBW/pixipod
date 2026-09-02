@@ -5,8 +5,7 @@
   "scripts": {
     "build": "nest build",
     "start": "node dist/main.js",
-    "start:dev": "nest start --watch",
-    "find:chat": "node scripts/find-chat-id.mjs"
+    "start:dev": "nest start --watch"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.6",
@@ -16,6 +15,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
     "dotenv": "^17.2.2",
+    "nodemailer": "^7.0.6",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2"
   },
@@ -23,6 +23,7 @@
     "@nestjs/cli": "^11.0.10",
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
+    "@types/nodemailer": "^8.0.1",
     "typescript": "^5.9.2"
   }
 }

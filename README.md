@@ -13,7 +13,7 @@ npm run dev
 
 ## Заявки
 
-Серверная часть на NestJS находится в [`server`](./server). Она принимает `POST /api/leads` и пересылает заявки в Telegram.
+Серверная часть на NestJS находится в [`server`](./server). Она принимает `POST /api/leads` и присылает заявки на `hellopixipod@mail.ru`.
 
 ```bash
 npm --prefix server install
@@ -21,7 +21,7 @@ Copy-Item server/.env.example server/.env
 npm run server:dev
 ```
 
-Токен бота и идентификатор чата задаются только в `server/.env`; этот файл не попадает в репозиторий.
+Пароль приложения Mail.ru задаётся только в `server/.env`; этот файл не попадает в репозиторий.
 
 ## Сборка
 
@@ -39,4 +39,4 @@ cp deploy/.env.example deploy/.env
 docker compose --env-file deploy/.env up -d --build
 ```
 
-Перед запуском заполните в `deploy/.env` токен Telegram-бота и идентификатор чата. Для TLS домен `pixipod.ru` должен указывать на IP сервера.
+Перед запуском заполните в `deploy/.env` пароль приложения Mail.ru (`MAIL_PASSWORD`). Для TLS домен `pixipod.ru` должен указывать на IP сервера.
