@@ -29,3 +29,14 @@ npm run server:dev
 npm run build
 npm run server:build
 ```
+
+## Развёртывание
+
+Продакшен собирается в Docker Compose: Caddy отдаёт статический сайт и проксирует `/api/*` в NestJS.
+
+```bash
+cp deploy/.env.example deploy/.env
+docker compose --env-file deploy/.env up -d --build
+```
+
+Перед запуском заполните в `deploy/.env` токен Telegram-бота и идентификатор чата. Для TLS домен `pixipod.ru` должен указывать на IP сервера.

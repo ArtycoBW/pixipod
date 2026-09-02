@@ -1,0 +1,11 @@
+.git
+.gitignore
+node_modules
+dist
+server/node_modules
+server/dist
+server/.env
+video-previews
+hf-blank
+preview-*.png
+deploy/.env
