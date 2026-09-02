@@ -4,6 +4,9 @@ services:
       context: ./server
       dockerfile: Dockerfile
     restart: unless-stopped
+    dns:
+      - 85.193.93.193
+      - 85.193.93.194
     environment:
       PORT: 3001
       FRONTEND_ORIGIN: https://pixipod.ru
@@ -15,6 +18,9 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
+    dns:
+      - 85.193.93.193
+      - 85.193.93.194
     depends_on:
       - api
     ports:
